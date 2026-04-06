@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tour Ciudad Historica",
+    "destino": "Quito",
+    "duracion": "1 dia",
+    "precio": 45
+  },
+  {
+    "id": 2,
+    "nombre": "Ruta de Montanas",
+    "destino": "Cotopaxi",
+    "duracion": "2 dias",
+    "precio": 120
+  },
+  {
+    "id": 3,
+    "nombre": "Aventura en la Costa",
+    "destino": "Montanita",
+    "duracion": "3 dias",
+    "precio": 180
+  }
+]
