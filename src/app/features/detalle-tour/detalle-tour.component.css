@@ -1,3 +1,14 @@
 .view {
   padding: 1.5rem;
 }
+
+.tour-card {
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.tour-card h2 {
+  margin: 0 0 0.5rem;
+}

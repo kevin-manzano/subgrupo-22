@@ -1,3 +1,23 @@
 <section class="view">
   <h1>Catalogo</h1>
+
+  @if (tours$ | async; as tours) {
+    @if (tours.length === 0) {
+      <p>No hay tours disponibles.</p>
+    } @else {
+      <ul class="tour-list" aria-label="Lista de tours disponibles">
+        @for (tour of tours; track tour.id) {
+          <li class="tour-item">
+            <h2>{{ tour.nombre }}</h2>
+            <p>Destino: {{ tour.destino }}</p>
+            <p>Duracion: {{ tour.duracion }}</p>
+            <p>Precio: {{ tour.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+            <a [routerLink]="['/tour', tour.id]">Ver detalle</a>
+          </li>
+        }
+      </ul>
+    }
+  } @else {
+    <p>Cargando tours...</p>
+  }
 </section>

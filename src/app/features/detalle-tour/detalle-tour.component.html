@@ -1,3 +1,20 @@
 <section class="view">
   <h1>Detalle de tour</h1>
+
+  @if (tour$ | async; as tour) {
+    @if (tour) {
+      <article class="tour-card">
+        <h2>{{ tour.nombre }}</h2>
+        <p>Destino: {{ tour.destino }}</p>
+        <p>Duracion: {{ tour.duracion }}</p>
+        <p>Precio: {{ tour.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+      </article>
+    } @else {
+      <p>No se encontro el tour solicitado.</p>
+    }
+  } @else {
+    <p>Cargando detalle...</p>
+  }
+
+  <a [routerLink]="['/catalogo']">Volver al catalogo</a>
 </section>

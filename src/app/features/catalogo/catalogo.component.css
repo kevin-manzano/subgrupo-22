@@ -1,3 +1,21 @@
 .view {
   padding: 1.5rem;
 }
+
+.tour-list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.tour-item {
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tour-item h2 {
+  margin: 0 0 0.5rem;
+}
