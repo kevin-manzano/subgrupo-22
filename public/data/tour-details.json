@@ -1,0 +1,227 @@
+[
+  {
+    "tourId": 1,
+    "itinerario": [
+      {
+        "dias": "Dia 1",
+        "titulo": "Llegada y bienvenida",
+        "descripcion": "Recepcion en destino, traslado al hotel y recorrido inicial por el centro historico."
+      },
+      {
+        "dias": "Dia 2 - 3",
+        "titulo": "Exploracion cultural",
+        "descripcion": "Visitas guiadas a puntos iconicos, mercados locales y experiencias gastronomicas."
+      },
+      {
+        "dias": "Dia 4",
+        "titulo": "Naturaleza y panoramicas",
+        "descripcion": "Ruta escenica con paradas fotograficas y actividades al aire libre."
+      },
+      {
+        "dias": "Dia 5",
+        "titulo": "Cierre del viaje",
+        "descripcion": "Tiempo libre para compras, almuerzo de despedida y traslado al aeropuerto."
+      }
+    ],
+    "detallesTecnicos": [
+      "Vuelos internos incluidos",
+      "Transporte 4x4 en ruta",
+      "Asistencia 24/7 durante el tour"
+    ],
+    "testimonios": [
+      {
+        "texto": "Un recorrido impecable. Cada parada estuvo bien organizada y con detalles que hicieron la diferencia.",
+        "nombre": "Valeria Mena",
+        "profesion": "Fotografa de viajes",
+        "iniciales": "VM"
+      },
+      {
+        "texto": "La combinacion entre cultura y confort fue perfecta. Volveria a reservar sin dudarlo.",
+        "nombre": "Julian Pardo",
+        "profesion": "Consultor de negocios",
+        "iniciales": "JP"
+      },
+      {
+        "texto": "El equipo local fue excelente y nos hizo sentir acompanados en todo momento.",
+        "nombre": "Camila Rios",
+        "profesion": "Disenadora UX",
+        "iniciales": "CR"
+      }
+    ]
+  },
+  {
+    "tourId": 2,
+    "itinerario": [
+      {
+        "dias": "Dia 1",
+        "titulo": "Templos de bienvenida",
+        "descripcion": "Paseo guiado por santuarios y jardines para introducir la historia de Kioto."
+      },
+      {
+        "dias": "Dia 2 - 3",
+        "titulo": "Tradicion y gastronomia",
+        "descripcion": "Recorrido por barrios tradicionales y degustacion de especialidades regionales."
+      },
+      {
+        "dias": "Dia 4 - 5",
+        "titulo": "Bosques y despedida",
+        "descripcion": "Visita al bosque de bambu y cierre del viaje con tiempo libre."
+      }
+    ],
+    "detallesTecnicos": [
+      "Traslados urbanos incluidos",
+      "Pases de ingreso priorizado",
+      "Asistencia bilingue"
+    ],
+    "testimonios": [
+      {
+        "texto": "Un viaje muy completo para conocer la cultura japonesa de forma autentica.",
+        "nombre": "Paula Nieto",
+        "profesion": "Arquitecta",
+        "iniciales": "PN"
+      },
+      {
+        "texto": "La organizacion fue excelente y el guia hizo cada visita memorable.",
+        "nombre": "Miguel Ocampo",
+        "profesion": "Docente",
+        "iniciales": "MO"
+      },
+      {
+        "texto": "Perfecto para quienes buscan equilibrio entre historia, calma y buena comida.",
+        "nombre": "Daniela Soto",
+        "profesion": "Periodista",
+        "iniciales": "DS"
+      }
+    ]
+  },
+  {
+    "tourId": 3,
+    "itinerario": [
+      {
+        "dias": "Dia 1",
+        "titulo": "Medina y zocos",
+        "descripcion": "Primer contacto con la ciudad y sus mercados tradicionales."
+      },
+      {
+        "dias": "Dia 2",
+        "titulo": "Talleres artesanales",
+        "descripcion": "Encuentro con artesanos locales y demostraciones en vivo."
+      },
+      {
+        "dias": "Dia 3 - 4",
+        "titulo": "Ruta nocturna",
+        "descripcion": "Cena tipica, musica tradicional y experiencias culturales guiadas."
+      }
+    ],
+    "detallesTecnicos": [
+      "Traslado aeropuerto - hotel",
+      "Guia experto en historia local",
+      "Soporte logistico continuo"
+    ],
+    "testimonios": [
+      {
+        "texto": "La energia de Marrakech es increible y el itinerario la aprovecha al maximo.",
+        "nombre": "Laura Pineda",
+        "profesion": "Emprendedora",
+        "iniciales": "LP"
+      },
+      {
+        "texto": "Excelente mezcla entre cultura, compras y experiencias tradicionales.",
+        "nombre": "Ernesto Cifuentes",
+        "profesion": "Chef",
+        "iniciales": "EC"
+      },
+      {
+        "texto": "Todo estuvo bien coordinado y con tiempos muy comodos.",
+        "nombre": "Monica Vera",
+        "profesion": "Psicologa",
+        "iniciales": "MV"
+      }
+    ]
+  },
+  {
+    "tourId": 4,
+    "itinerario": [
+      {
+        "dias": "Dia 1",
+        "titulo": "Centro historico",
+        "descripcion": "Recorrido por plazas, templos y barrios de tradicion inca."
+      },
+      {
+        "dias": "Dia 2",
+        "titulo": "Mercados y senderos",
+        "descripcion": "Dia de artesanias, caminata panoramica y cierre cultural."
+      }
+    ],
+    "detallesTecnicos": [
+      "Transporte local privado",
+      "Entradas incluidas a sitios clave",
+      "Asistencia medica basica"
+    ],
+    "testimonios": [
+      {
+        "texto": "Un tour corto pero muy intenso en historia y paisajes.",
+        "nombre": "Natalia Flores",
+        "profesion": "Ilustradora",
+        "iniciales": "NF"
+      },
+      {
+        "texto": "Ideal para una escapada cultural con muy buena atencion.",
+        "nombre": "Rodrigo Molina",
+        "profesion": "Ingeniero civil",
+        "iniciales": "RM"
+      },
+      {
+        "texto": "Excelente experiencia para conocer Cusco en poco tiempo.",
+        "nombre": "Gloria Mena",
+        "profesion": "Administradora",
+        "iniciales": "GM"
+      }
+    ]
+  },
+  {
+    "tourId": 5,
+    "itinerario": [
+      {
+        "dias": "Dia 1 - 2",
+        "titulo": "Costa urbana",
+        "descripcion": "Recorrido por playas iconicas y miradores frente al oceano."
+      },
+      {
+        "dias": "Dia 3 - 4",
+        "titulo": "Arte y barrios creativos",
+        "descripcion": "Ruta por galerias, cafes y zonas culturales de la ciudad."
+      },
+      {
+        "dias": "Dia 5 - 6",
+        "titulo": "Cierre premium",
+        "descripcion": "Jornada de compras y despedida con cena especial."
+      }
+    ],
+    "detallesTecnicos": [
+      "Traslados aeropuerto - hotel",
+      "Pases para transporte maritimo",
+      "Asistencia turistica permanente"
+    ],
+    "testimonios": [
+      {
+        "texto": "Una ciudad vibrante y un plan muy completo para aprovechar cada dia.",
+        "nombre": "Sofia Quintero",
+        "profesion": "Analista de datos",
+        "iniciales": "SQ"
+      },
+      {
+        "texto": "La calidad del hospedaje y la logistica superaron expectativas.",
+        "nombre": "Ivan Caro",
+        "profesion": "Productor audiovisual",
+        "iniciales": "IC"
+      },
+      {
+        "texto": "Muy recomendado para quienes quieren combinar playa y ciudad.",
+        "nombre": "Adriana Sierra",
+        "profesion": "Abogada",
+        "iniciales": "AS"
+      }
+    ]
+  }
+]

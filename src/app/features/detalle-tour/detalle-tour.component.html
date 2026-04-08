@@ -1,20 +1,130 @@
-<section class="view">
-  <h1>Detalle de tour</h1>
+<section class="detalle-tour" aria-label="Detalle del tour">
+  @if (tourView$ | async; as vm) {
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="hero-kicker">DESTINO: {{ vm.tour.destino }}</p>
+        <h1>{{ vm.tour.nombre }}</h1>
+        <p class="hero-description">{{ vm.tour.descripcion }}</p>
+      </div>
 
-  @if (tour$ | async; as tour) {
-    @if (tour) {
-      <article class="tour-card">
-        <h2>{{ tour.nombre }}</h2>
-        <p>Destino: {{ tour.destino }}</p>
-        <p>Duracion: {{ tour.duracion }}</p>
-        <p>Precio: {{ tour.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+      <aside class="hero-meta" aria-label="Resumen de precio y valoracion">
+        <p class="price-label">DESDE</p>
+        <p class="price-value">{{ vm.tour.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+        <p class="rating-row">
+          <span class="rating-star" aria-hidden="true">&#9733;</span>
+          {{ vm.tour.puntuacion }}
+          <span class="reviews">({{ vm.resenas }} resenas)</span>
+        </p>
+        <p class="country">{{ vm.tour.pais }} • {{ vm.tour.duracion }}</p>
+      </aside>
+    </header>
+
+    <section class="gallery" aria-label="Galeria de imagenes del tour">
+      <div class="gallery-main">
+        <img
+          [ngSrc]="vm.galleryImages[0]"
+          alt="Vista principal del tour"
+          width="1280"
+          height="760"
+          priority
+          (error)="onImageError($event)"
+        />
+      </div>
+      <div class="gallery-grid">
+        <img
+          [ngSrc]="vm.galleryImages[1]"
+          alt="Imagen complementaria 1 del tour"
+          width="640"
+          height="640"
+          (error)="onImageError($event)"
+        />
+        <img
+          [ngSrc]="vm.galleryImages[2]"
+          alt="Imagen complementaria 2 del tour"
+          width="640"
+          height="640"
+          (error)="onImageError($event)"
+        />
+        <img
+          class="wide"
+          [ngSrc]="vm.galleryImages[3]"
+          alt="Imagen panoramica del tour"
+          width="1280"
+          height="640"
+          (error)="onImageError($event)"
+        />
+      </div>
+    </section>
+
+    <section class="info-grid" aria-label="Itinerario y ruta de expedicion">
+      <article class="itinerario">
+        <h2>Itinerario del Viaje</h2>
+        <ul>
+          @for (paso of vm.detail.itinerario; track paso.titulo) {
+            <li>
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <p class="dias">{{ paso.dias }}</p>
+                <h3>{{ paso.titulo }}</h3>
+                <p>{{ paso.descripcion }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+
+        <div class="badges" aria-label="Categorias incluidas">
+          @for (badge of vm.tour.categorias ?? []; track badge) {
+            <span>{{ badge }}</span>
+          }
+        </div>
       </article>
-    } @else {
-      <p>No se encontro el tour solicitado.</p>
-    }
+
+      <aside class="ruta">
+        <div class="ruta-card">
+          <img
+            [ngSrc]="vm.tour.imagenRuta || fallbackImage"
+            alt="Mapa ilustrativo de la ruta del tour"
+            width="960"
+            height="540"
+            (error)="onImageError($event)"
+          />
+          <ul>
+            @for (detalle of vm.detail.detallesTecnicos; track detalle) {
+              <li>
+                <span class="icon-dot" aria-hidden="true"></span>
+                {{ detalle }}
+              </li>
+            }
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="testimonios" aria-label="Cronicas de viajeros">
+      <div class="testimonios-head">
+        <h2>Cronicas de Viajeros</h2>
+        <a href="#" aria-label="Leer todas las resenas de viajeros">Leer todas las resenas</a>
+      </div>
+
+      <div class="testimonios-grid">
+        @for (testimonio of vm.detail.testimonios; track testimonio.nombre) {
+          <article>
+            <p class="stars" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <blockquote>"{{ testimonio.texto }}"</blockquote>
+            <footer>
+              <span class="avatar" aria-hidden="true">{{ testimonio.iniciales }}</span>
+              <div>
+                <p class="nombre">{{ testimonio.nombre }}</p>
+                <p class="profesion">{{ testimonio.profesion }}</p>
+              </div>
+            </footer>
+          </article>
+        }
+      </div>
+    </section>
   } @else {
-    <p>Cargando detalle...</p>
+    <p class="loading">Cargando detalle...</p>
   }
 
-  <a [routerLink]="['/catalogo']">Volver al catalogo</a>
+  <a class="volver" [routerLink]="['/catalogo']">Volver al catalogo</a>
 </section>

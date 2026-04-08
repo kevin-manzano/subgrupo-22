@@ -9,7 +9,14 @@
     "duracion": "3 dias",
     "precio": 899,
     "puntuacion": 4.9,
+    "totalResenas": 214,
     "esFavorito": true,
+    "categorias": [
+      "Alojamiento de lujo",
+      "Guia privado",
+      "Experiencia gastronomica"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
     "imagenes": [
       "/images/tours/venecia-1.jpg",
       "/images/tours/venecia-2.jpg"
@@ -25,7 +32,14 @@
     "duracion": "5 dias",
     "precio": 1320,
     "puntuacion": 4.8,
+    "totalResenas": 189,
     "esFavorito": false,
+    "categorias": [
+      "Templos historicos",
+      "Guia local",
+      "Cocina tradicional"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
     "imagenes": [
       "/images/tours/kioto-1.jpg"
     ]
@@ -40,7 +54,14 @@
     "duracion": "4 dias",
     "precio": 760,
     "puntuacion": 4.7,
+    "totalResenas": 143,
     "esFavorito": true,
+    "categorias": [
+      "Mercados locales",
+      "Riad boutique",
+      "Ruta nocturna"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
     "imagenes": [
       "/images/tours/marrakech-1.jpg",
       ""
@@ -56,7 +77,14 @@
     "duracion": "2 dias",
     "precio": 540,
     "puntuacion": 4.6,
+    "totalResenas": 98,
     "esFavorito": false,
+    "categorias": [
+      "Cultura inca",
+      "Senderismo suave",
+      "Mercados artesanales"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
     "imagenes": [
       "/images/tours/cusco-1.jpg"
     ]
@@ -71,7 +99,14 @@
     "duracion": "6 dias",
     "precio": 1490,
     "puntuacion": 4.9,
+    "totalResenas": 267,
     "esFavorito": false,
+    "categorias": [
+      "Playas iconicas",
+      "Recorrido urbano",
+      "Experiencia premium"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
     "imagenes": []
   }
 ]

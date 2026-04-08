@@ -1,3 +1,98 @@
-<section class="view">
-  <h1>Home</h1>
-</section>
+<main class="home-page">
+  <section class="hero" aria-label="Presentacion principal">
+    <div class="hero-overlay">
+      <span class="hero-tag">EXPERIENCIAS CURADAS</span>
+      <h1>Tu Viaje Comienza Aqui</h1>
+      <p>
+        Descubre joyas ocultas del mundo con rutas disenadas para viajeros que buscan
+        cultura, naturaleza y momentos inolvidables.
+      </p>
+      <div class="hero-actions">
+        <a href="/catalogo" class="btn btn-primary">
+          Explorar Destinos
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <!-- <button class="btn btn-ghost" type="button">Ver Video</button> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="verticales" aria-label="Verticales de viaje">
+    <header class="section-head">
+      <div>
+        <h2>Nuestras Verticales de Viaje</h2>
+        <p>Soluciones flexibles para distintos objetivos de viaje, aprendizaje y expansion.</p>
+      </div>
+      <span class="head-line" aria-hidden="true"></span>
+    </header>
+
+    <div class="verticales-grid">
+      @for (vertical of verticales; track vertical.titulo) {
+        <article class="vertical-card">
+          <span class="vertical-icon" aria-hidden="true">{{ vertical.icono }}</span>
+          <h3>{{ vertical.titulo }}</h3>
+          <p>{{ vertical.descripcion }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="destacados" aria-label="Destinos destacados">
+    <header class="section-head">
+      <div>
+        <h2>Destinos Destacados</h2>
+        <p>Explora nuestras recomendaciones top y accede al detalle completo de cada tour.</p>
+      </div>
+      <span class="head-line" aria-hidden="true"></span>
+    </header>
+
+    @if (featuredTours(); as featuredTours) {
+      @if (featuredTours.length >= 3) {
+        <div class="destacados-grid">
+          <a class="card card-main" [href]="'/tour/' + featuredTours[0].id">
+            <img
+              [src]="featuredTours[0].imagen"
+              [alt]="'Imagen de ' + featuredTours[0].nombre"
+              width="1200"
+              height="760"
+              (error)="onImageError($event)"
+            />
+            <div class="card-overlay">
+              <span class="badge">MARAVILLA DEL MUNDO</span>
+              <h3>{{ featuredTours[0].nombre }}</h3>
+              <p>{{ featuredTours[0].descripcion }}</p>
+            </div>
+          </a>
+
+          <div class="stack-cards">
+            <a class="card card-secondary" [href]="'/tour/' + featuredTours[1].id">
+              <img
+                [src]="featuredTours[1].imagen"
+                [alt]="'Imagen de ' + featuredTours[1].nombre"
+                width="900"
+                height="430"
+                (error)="onImageError($event)"
+              />
+              <div class="center-title">{{ featuredTours[1].nombre }}</div>
+            </a>
+
+            <a class="card card-secondary" [href]="'/tour/' + featuredTours[2].id">
+              <img
+                [src]="featuredTours[2].imagen"
+                [alt]="'Imagen de ' + featuredTours[2].nombre"
+                width="900"
+                height="430"
+                (error)="onImageError($event)"
+              />
+              <div class="center-title">{{ featuredTours[2].nombre }}</div>
+            </a>
+          </div>
+        </div>
+      } @else {
+        <p class="empty">No hay suficientes tours para mostrar destinos destacados.</p>
+      }
+    } @else {
+      <p class="empty">Cargando destinos destacados...</p>
+    }
+  </section>
+</main>
