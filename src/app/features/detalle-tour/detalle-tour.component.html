@@ -3,7 +3,22 @@
     <header class="hero">
       <div class="hero-copy">
         <p class="hero-kicker">DESTINO: {{ vm.tour.destino }}</p>
-        <h1>{{ vm.tour.nombre }}</h1>
+        <div class="title-row">
+          <h1>{{ vm.tour.nombre }}</h1>
+          <button
+            class="favorite-btn"
+            [class.favorite-active]="isFavoritoStatus(vm.tour.id)"
+            (click)="toggleFavorito(vm.tour.id)"
+            [attr.aria-label]="isFavoritoStatus(vm.tour.id) ? 'Remove from favorites' : 'Add to favorites'"
+            type="button"
+          >
+            @if (isFavoritoStatus(vm.tour.id)) {
+              &#10084;
+            } @else {
+              &#9825;
+            }
+          </button>
+        </div>
         <p class="hero-description">{{ vm.tour.descripcion }}</p>
       </div>
 

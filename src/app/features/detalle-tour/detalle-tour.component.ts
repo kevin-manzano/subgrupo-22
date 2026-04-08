@@ -1,6 +1,7 @@
 import { AsyncPipe, CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { map, of, switchMap } from 'rxjs';
 import { ToursDataService } from '../../core/data-access/tours-data.service';
 import { Tour } from '../../core/models/tour.model';
@@ -19,6 +20,9 @@ export class DetalleTourComponent {
   private readonly toursDataService = inject(ToursDataService);
 
   readonly fallbackImage = FALLBACK_IMAGE;
+  readonly favoritesCache = toSignal(this.toursDataService.toursFavoritasCache$, {
+    initialValue: new Map<number, boolean>()
+  });
 
   readonly tourView$ = this.route.paramMap.pipe(
     map((params) => Number(params.get('id'))),
@@ -73,6 +77,15 @@ export class DetalleTourComponent {
     ];
   }
 
+
+  toggleFavorito(tourId: number): void {
+    const currentFavoriteStatus = this.isFavoritoStatus(tourId);
+    this.toursDataService.toggleFavorito(tourId, !currentFavoriteStatus);
+  }
+
+  isFavoritoStatus(tourId: number): boolean {
+    return this.favoritesCache().get(tourId) ?? false;
+  }
   private getReviewsCount(tour: Tour): number {
     return Math.max(32, Math.round(tour.puntuacion * 37 + tour.id * 14));
   }

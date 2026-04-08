@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 import { map, Observable, of, switchMap } from 'rxjs';
 import { Tour, TourDetail, TourWithDetail } from '../models/tour.model';
 
@@ -10,6 +11,9 @@ export class ToursDataService {
   private readonly http = inject(HttpClient);
   private readonly toursPath = '/data/tours.json';
   private readonly detailsPath = '/data/tour-details.json';
+  private readonly toursFavoritasCacheSubject = new BehaviorSubject<Map<number, boolean>>(new Map());
+
+  readonly toursFavoritasCache$ = this.toursFavoritasCacheSubject.asObservable();
 
   getTours(): Observable<Tour[]> {
     return this.http.get<Tour[]>(this.toursPath);
@@ -49,5 +53,15 @@ export class ToursDataService {
         );
       })
     );
+  }
+
+  toggleFavorito(tourId: number, nuevoEstado: boolean): void {
+    const cache = this.toursFavoritasCacheSubject.value;
+    cache.set(tourId, nuevoEstado);
+    this.toursFavoritasCacheSubject.next(new Map(cache));
+  }
+
+  isFavorito(tourId: number): boolean {
+    return this.toursFavoritasCacheSubject.value.get(tourId) ?? false;
   }
 }

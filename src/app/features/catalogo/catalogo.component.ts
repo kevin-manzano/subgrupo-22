@@ -4,7 +4,8 @@ import {
   Component,
   computed,
   inject,
-  signal
+  signal,
+  effect
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
@@ -24,6 +25,9 @@ export class CatalogoComponent {
   readonly starIndexes = [1, 2, 3, 4, 5] as const;
 
   readonly tours = toSignal(this.toursDataService.getTours(), { initialValue: [] as Tour[] });
+  readonly favoritesCache = toSignal(this.toursDataService.toursFavoritasCache$, {
+    initialValue: new Map<number, boolean>()
+  });
 
   readonly precioMaximoCatalogo = computed(() => {
     const precios = this.tours().map((tour) => tour.precio);
@@ -112,5 +116,17 @@ export class CatalogoComponent {
   private extraerDias(textoDuracion: string): number {
     const coincidencia = textoDuracion.match(/\d+/);
     return coincidencia ? Number(coincidencia[0]) : NaN;
+  }
+
+  toggleFavorit(event: Event, tourId: number, currentFavoriteState: boolean): void {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const nuevoEstado = !currentFavoriteState;
+    this.toursDataService.toggleFavorito(tourId, nuevoEstado);
+  }
+
+  isFavoritoStatus(tourId: number): boolean {
+    return this.favoritesCache().get(tourId) ?? false;
   }
 }

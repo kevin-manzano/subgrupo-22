@@ -82,17 +82,19 @@
                       }
                       <span class="rating-score">{{ tour.puntuacion }}</span>
                     </div>
-                    <span
+                    <button
                       class="favorite"
-                      [class.favorite-active]="tour.esFavorito"
-                      [attr.aria-label]="tour.esFavorito ? 'Tour favorito' : 'Tour no favorito'"
+                      [class.favorite-active]="isFavoritoStatus(tour.id)"
+                      [attr.aria-label]="isFavoritoStatus(tour.id) ? 'Remove from favorites' : 'Add to favorites'"
+                      (click)="toggleFavorit($event, tour.id, isFavoritoStatus(tour.id))"
+                      type="button"
                     >
-                      @if (tour.esFavorito) {
+                      @if (isFavoritoStatus(tour.id)) {
                         &#10084;
                       } @else {
                         &#9825;
                       }
-                    </span>
+                    </button>
                   </div>
 
                   <h2>{{ tour.nombre }}</h2>
