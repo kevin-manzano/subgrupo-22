@@ -1,23 +1,77 @@
 [
   {
     "id": 1,
-    "nombre": "Tour Ciudad Historica",
-    "destino": "Quito",
-    "duracion": "1 dia",
-    "precio": 45
+    "nombre": "Sabores y Canales de Venecia",
+    "descripcion": "Recorre barrios historicos, mercados tradicionales y atardeceres frente al Gran Canal.",
+    "pais": "Italia",
+    "continente": "Europa",
+    "destino": "Venecia",
+    "duracion": "3 dias",
+    "precio": 899,
+    "puntuacion": 4.9,
+    "esFavorito": true,
+    "imagenes": [
+      "/images/tours/venecia-1.jpg",
+      "/images/tours/venecia-2.jpg"
+    ]
   },
   {
     "id": 2,
-    "nombre": "Ruta de Montanas",
-    "destino": "Cotopaxi",
-    "duracion": "2 dias",
-    "precio": 120
+    "nombre": "Templos y Jardines de Kioto",
+    "descripcion": "Una travesia cultural entre santuarios milenarios, bosques de bambu y gastronomia local.",
+    "pais": "Japon",
+    "continente": "Asia",
+    "destino": "Kioto",
+    "duracion": "5 dias",
+    "precio": 1320,
+    "puntuacion": 4.8,
+    "esFavorito": false,
+    "imagenes": [
+      "/images/tours/kioto-1.jpg"
+    ]
   },
   {
     "id": 3,
-    "nombre": "Aventura en la Costa",
-    "destino": "Montanita",
-    "duracion": "3 dias",
-    "precio": 180
+    "nombre": "Ruta Magica por Marrakech",
+    "descripcion": "Vive medinas vibrantes, artesania ancestral y noches con musica tradicional.",
+    "pais": "Marruecos",
+    "continente": "Africa",
+    "destino": "Marrakech",
+    "duracion": "4 dias",
+    "precio": 760,
+    "puntuacion": 4.7,
+    "esFavorito": true,
+    "imagenes": [
+      "/images/tours/marrakech-1.jpg",
+      ""
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Andes y Tradicion en Cusco",
+    "descripcion": "Descubre historia inca, mercados de artesanos y senderos panoramicos.",
+    "pais": "Peru",
+    "continente": "America",
+    "destino": "Cusco",
+    "duracion": "2 dias",
+    "precio": 540,
+    "puntuacion": 4.6,
+    "esFavorito": false,
+    "imagenes": [
+      "/images/tours/cusco-1.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Paisajes Costero de Sidney",
+    "descripcion": "Playas iconicas, barrios creativos y un itinerario urbano con vistas oceanicas.",
+    "pais": "Australia",
+    "continente": "Oceania",
+    "destino": "Sidney",
+    "duracion": "6 dias",
+    "precio": 1490,
+    "puntuacion": 4.9,
+    "esFavorito": false,
+    "imagenes": []
   }
 ]
