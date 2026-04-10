@@ -1,0 +1,123 @@
+.footer {
+  background: #0b1d3a;
+  color: #d1dae8;
+  padding: 3rem 1.4rem 1.2rem;
+}
+
+.footer-content {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.footer-column h3 {
+  margin: 0 0 0.95rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f3f6fb;
+}
+
+.footer-brand h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: #f97316;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: #c4d0e3;
+  line-height: 1.65;
+  max-width: 32ch;
+}
+
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.footer-column a {
+  color: #b6c3d8;
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+.footer-column a:focus-visible {
+  color: #f97316;
+  outline: 2px solid #f97316;
+  outline-offset: 4px;
+  border-radius: 0.2rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.social-links a {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid rgba(196, 208, 227, 0.45);
+  color: #e6edf8;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.22s ease;
+}
+
+.social-links a:hover {
+  background: #f97316;
+  border-color: #f97316;
+  color: #ffffff;
+}
+
+.footer-credits {
+  width: min(1100px, 100%);
+  margin: 2rem auto 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(196, 208, 227, 0.2);
+  text-align: center;
+}
+
+.footer-credits p {
+  margin: 0;
+  color: #adbcd2;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 980px) {
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 2.3rem 1rem 1.1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-brand p {
+    max-width: none;
+  }
+}

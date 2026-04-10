@@ -1,0 +1,112 @@
+<section class="contacto-view" aria-label="Seccion de contacto">
+  <header class="contacto-header">
+    <p class="kicker">PONTE EN CONTACTO</p>
+    <h1>
+      Tu viaje comienza con una
+      <span>conversacion.</span>
+    </h1>
+  </header>
+
+  <div class="contacto-grid">
+    <article class="form-card" aria-label="Formulario de contacto">
+      <h2>Envianos un mensaje</h2>
+      <form [formGroup]="formularioContacto" (ngSubmit)="enviarFormulario()" novalidate>
+        <label for="nombreCompleto">Nombre Completo</label>
+        <input
+          id="nombreCompleto"
+          type="text"
+          placeholder="Ingresa tu nombre completo"
+          formControlName="nombreCompleto"
+          [class.input-error]="mostrarError('nombreCompleto')"
+          autocomplete="name"
+        />
+        @if (mostrarError('nombreCompleto')) {
+          <p class="error-message">{{ mensajeError('nombreCompleto') }}</p>
+        }
+
+        <label for="correoElectronico">Correo Electronico</label>
+        <input
+          id="correoElectronico"
+          type="email"
+          placeholder="usuario@dominio.com"
+          formControlName="correoElectronico"
+          [class.input-error]="mostrarError('correoElectronico')"
+          autocomplete="email"
+        />
+        @if (mostrarError('correoElectronico')) {
+          <p class="error-message">{{ mensajeError('correoElectronico') }}</p>
+        }
+
+        <label for="mensaje">Tu Mensaje</label>
+        <textarea
+          id="mensaje"
+          rows="6"
+          placeholder="Escribe tu mensaje aqui"
+          formControlName="mensaje"
+          [class.input-error]="mostrarError('mensaje')"
+        ></textarea>
+        <div class="message-meta">
+          @if (mostrarError('mensaje')) {
+            <p class="error-message">{{ mensajeError('mensaje') }}</p>
+          } @else {
+            <span class="hint">Minimo 20 caracteres, maximo 500</span>
+          }
+          <span class="counter">{{ mensajeCaracteres() }}/500</span>
+        </div>
+
+        <button type="submit" [disabled]="isSubmitting()">
+          @if (isSubmitting()) {
+            Enviando...
+          } @else {
+            Enviar Mensaje &#9992;
+          }
+        </button>
+      </form>
+    </article>
+
+    <aside class="info-column" aria-label="Informacion de contacto">
+      <div class="info-cards-top">
+        <article class="info-card light">
+          <p class="icon" aria-hidden="true">&#9993;</p>
+          <h3>Email</h3>
+          <p>contacto@aventurasglobales.com</p>
+        </article>
+
+        <article class="info-card light">
+          <p class="icon" aria-hidden="true">&#9742;</p>
+          <h3>Telefono</h3>
+          <p>+57 320 555 1298</p>
+        </article>
+      </div>
+
+      <article class="info-card dark">
+        <p class="icon location" aria-hidden="true">&#128205;</p>
+        <h3>Sede Principal</h3>
+        <p>Calle 93 #15-42, Oficina 801, Bogota, Colombia</p>
+      </article>
+
+      <article class="map-card" aria-label="Mapa de ubicacion">
+        <img
+          src="images/ImagenNull.png"
+          width="1400"
+          height="720"
+          alt="Mapa de ubicacion referencial"
+          (error)="onImageError($event)"
+        />
+        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+          VER EN GOOGLE MAPS &#8599;
+        </a>
+      </article>
+    </aside>
+  </div>
+
+  @if (mostrarModalExito()) {
+    <div class="modal-backdrop" (click)="cerrarModalExito()">
+      <article class="modal" (click)="$event.stopPropagation()" aria-live="polite">
+        <h2>Mensaje enviado</h2>
+        <p>¡Mensaje enviado con éxito! Nos pondremos en contacto pronto con ustedes.</p>
+        <button type="button" (click)="cerrarModalExito()">Cerrar</button>
+      </article>
+    </div>
+  }
+</section>

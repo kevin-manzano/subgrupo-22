@@ -1,0 +1,112 @@
+<section class="catalogo-layout" aria-label="Catalogo de tours">
+  <aside class="filters" aria-label="Panel de filtros de tours">
+    <h2>Filtrar tours</h2>
+
+    <label class="filter-block" for="filtro-precio">
+      <span>Precio maximo: {{ precioMaxFiltro() | currency:'USD':'symbol':'1.0-0' }}</span>
+      <input
+        id="filtro-precio"
+        type="range"
+        min="100"
+        [max]="precioMaximoCatalogo()"
+        [value]="precioMaxFiltro()"
+        (input)="onPrecioInput($event)"
+      />
+    </label>
+
+    <label class="filter-block" for="filtro-continente">
+      <span>Continente</span>
+      <select
+        id="filtro-continente"
+        [value]="continenteFiltro()"
+        (change)="onContinenteChange($event)"
+      >
+        <option value="todos">Todos</option>
+        @for (continente of continentesDisponibles(); track continente) {
+          <option [value]="continente">{{ continente }}</option>
+        }
+      </select>
+    </label>
+
+    <label class="filter-block" for="filtro-duracion">
+      <span>Duracion</span>
+      <select id="filtro-duracion" [value]="duracionFiltro()" (change)="onDuracionChange($event)">
+        <option value="todas">Todas</option>
+        <option value="1-2">1-2 dias</option>
+        <option value="3-5">3-5 dias</option>
+        <option value="6+">6+ dias</option>
+      </select>
+    </label>
+  </aside>
+
+  <div class="catalogo-content">
+    <header class="catalogo-header">
+      <h1>Catalogo de Tours</h1>
+      <p>Selecciona una experiencia y abre su vista de detalle.</p>
+    </header>
+
+    @if (tours().length === 0) {
+      <p>Cargando tours...</p>
+    } @else if (toursFiltrados().length === 0) {
+      <p>No hay tours disponibles con los filtros seleccionados.</p>
+    } @else {
+      <ul class="tour-grid" aria-label="Lista de tours disponibles">
+        @for (tour of toursFiltrados(); track tour.id) {
+          <li>
+            <a
+              class="tour-card-link"
+              [routerLink]="['/tour', tour.id]"
+              [attr.aria-label]="'Ver detalle de ' + tour.nombre"
+            >
+              <article class="tour-card">
+                <div class="tour-image-wrap">
+                  <span class="country-tag">{{ tour.pais }}</span>
+                  <img
+                    class="tour-image"
+                    [src]="getImagenPrincipal(tour)"
+                    [alt]="'Imagen del tour ' + tour.nombre"
+                    (error)="onImageError($event)"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="tour-body">
+                  <div class="tour-top-row">
+                    <div class="rating" [attr.aria-label]="'Puntuacion ' + tour.puntuacion + ' de 5 estrellas'">
+                      @for (star of starIndexes; track star) {
+                        <span
+                          class="star"
+                          [class.star-filled]="star <= getPuntuacionRedondeada(tour.puntuacion)"
+                          aria-hidden="true"
+                        >&#9733;</span>
+                      }
+                      <span class="rating-score">{{ tour.puntuacion }}</span>
+                    </div>
+                    <button
+                      class="favorite"
+                      [class.favorite-active]="isFavoritoStatus(tour.id)"
+                      [attr.aria-label]="isFavoritoStatus(tour.id) ? 'Remove from favorites' : 'Add to favorites'"
+                      (click)="toggleFavorit($event, tour.id, isFavoritoStatus(tour.id))"
+                      type="button"
+                    >
+                      @if (isFavoritoStatus(tour.id)) {
+                        &#10084;
+                      } @else {
+                        &#9825;
+                      }
+                    </button>
+                  </div>
+
+                  <h2>{{ tour.nombre }}</h2>
+                  <p class="tour-description">{{ tour.descripcion }}</p>
+                  <p class="tour-duration">{{ tour.duracion }} | {{ tour.continente }}</p>
+                  <p class="tour-price">{{ tour.precio | currency:'USD':'symbol':'1.0-0' }}</p>
+                </div>
+              </article>
+            </a>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</section>

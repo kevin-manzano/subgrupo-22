@@ -1,0 +1,11 @@
+<nav class="navbar" aria-label="Navegacion principal">
+  <a class="navbar-logo" routerLink="">Esencia Viajera</a>
+
+  <div class="navbar-center">
+    <a class="navbar-link" routerLink="" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">Inico</a>
+    <a class="navbar-link" routerLink="/catalogo" [routerLinkActive]="'active'">Catalogo</a>
+    <a class="navbar-link" routerLink="/contacto" [routerLinkActive]="'active'">Contactanos</a>
+  </div>
+
+  <a class="navbar-cta" routerLink="/contacto">Reserva ahora</a>
+</nav>

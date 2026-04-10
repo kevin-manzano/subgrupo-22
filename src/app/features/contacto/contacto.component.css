@@ -1,0 +1,239 @@
+.contacto-view {
+  background: #f9fafb;
+  color: #111827;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 2rem 1rem 3rem;
+}
+
+.contacto-header {
+  margin-bottom: 1.6rem;
+}
+
+.kicker {
+  color: #ff5733;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0;
+}
+
+.contacto-header h1 {
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  margin: 0.55rem 0 0;
+}
+
+.contacto-header span {
+  color: #ff5733;
+}
+
+.contacto-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.form-card,
+.info-card,
+.map-card {
+  border-radius: 1rem;
+}
+
+.form-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 38px -34px rgba(2, 6, 23, 0.45);
+  padding: 1.2rem;
+}
+
+.form-card h2 {
+  margin: 0 0 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.45rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+input,
+textarea {
+  border: 1px solid #cfd4dc;
+  border-radius: 0.8rem;
+  font: inherit;
+  padding: 0.75rem 0.85rem;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border-color: #ff5733;
+  outline: 2px solid #ffd2c7;
+  outline-offset: 1px;
+}
+
+.input-error {
+  border-color: #dc2626;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin: 0.22rem 0 0;
+}
+
+.message-meta {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1.4rem;
+}
+
+.hint,
+.counter {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+button[type='submit'] {
+  background: #ff5733;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.94rem;
+  font-weight: 700;
+  margin-top: 0.85rem;
+  padding: 0.8rem 1rem;
+}
+
+button[type='submit']:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.info-column {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.info-cards-top {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-card {
+  padding: 0.95rem;
+}
+
+.info-card h3 {
+  margin: 0.45rem 0 0.35rem;
+}
+
+.info-card p {
+  margin: 0;
+}
+
+.light {
+  background: #f3f4f6;
+}
+
+.dark {
+  background: #111f33;
+  color: #f9fafb;
+}
+
+.icon {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.location {
+  color: #ff5733;
+}
+
+.map-card {
+  background: #fff;
+  border: 1px solid #dfe3ea;
+  overflow: hidden;
+  position: relative;
+}
+
+.map-card img {
+  display: block;
+  height: 280px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.map-pin {
+  color: #ff5733;
+  font-size: 1.4rem;
+  left: 50%;
+  position: absolute;
+  top: 42%;
+  transform: translate(-50%, -50%);
+}
+
+.map-card a {
+  background: rgba(17, 24, 39, 0.86);
+  color: #fff;
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  margin: 0.72rem;
+  padding: 0.5rem 0.72rem;
+  text-decoration: none;
+}
+
+.modal-backdrop {
+  align-items: center;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 1rem;
+  position: fixed;
+  z-index: 40;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 480px;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+.modal h2 {
+  margin: 0 0 0.55rem;
+}
+
+.modal p {
+  color: #374151;
+  margin: 0;
+}
+
+.modal button {
+  background: #ff5733;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0.62rem 1rem;
+}
+
+@media (min-width: 980px) {
+  .contacto-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "nombre": "Sabores y Canales de Venecia",
+    "descripcion": "Recorre barrios historicos, mercados tradicionales y atardeceres frente al Gran Canal.",
+    "pais": "Italia",
+    "continente": "Europa",
+    "destino": "Venecia",
+    "duracion": "3 dias",
+    "precio": 899,
+    "puntuacion": 4.9,
+    "totalResenas": 214,
+    "esFavorito": true,
+    "categorias": [
+      "Alojamiento de lujo",
+      "Guia privado",
+      "Experiencia gastronomica"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
+    "imagenes": [
+      "/images/tours/venecia-1.jpg",
+      "/images/tours/venecia-2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Templos y Jardines de Kioto",
+    "descripcion": "Una travesia cultural entre santuarios milenarios, bosques de bambu y gastronomia local.",
+    "pais": "Japon",
+    "continente": "Asia",
+    "destino": "Kioto",
+    "duracion": "5 dias",
+    "precio": 1320,
+    "puntuacion": 4.8,
+    "totalResenas": 189,
+    "esFavorito": false,
+    "categorias": [
+      "Templos historicos",
+      "Guia local",
+      "Cocina tradicional"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
+    "imagenes": [
+      "/images/tours/kioto-1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Ruta Magica por Marrakech",
+    "descripcion": "Vive medinas vibrantes, artesania ancestral y noches con musica tradicional.",
+    "pais": "Marruecos",
+    "continente": "Africa",
+    "destino": "Marrakech",
+    "duracion": "4 dias",
+    "precio": 760,
+    "puntuacion": 4.7,
+    "totalResenas": 143,
+    "esFavorito": true,
+    "categorias": [
+      "Mercados locales",
+      "Riad boutique",
+      "Ruta nocturna"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
+    "imagenes": [
+      "/images/tours/marrakech-1.jpg",
+      ""
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Andes y Tradicion en Cusco",
+    "descripcion": "Descubre historia inca, mercados de artesanos y senderos panoramicos.",
+    "pais": "Peru",
+    "continente": "America",
+    "destino": "Cusco",
+    "duracion": "2 dias",
+    "precio": 540,
+    "puntuacion": 4.6,
+    "totalResenas": 98,
+    "esFavorito": false,
+    "categorias": [
+      "Cultura inca",
+      "Senderismo suave",
+      "Mercados artesanales"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
+    "imagenes": [
+      "/images/tours/cusco-1.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Paisajes Costero de Sidney",
+    "descripcion": "Playas iconicas, barrios creativos y un itinerario urbano con vistas oceanicas.",
+    "pais": "Australia",
+    "continente": "Oceania",
+    "destino": "Sidney",
+    "duracion": "6 dias",
+    "precio": 1490,
+    "puntuacion": 4.9,
+    "totalResenas": 267,
+    "esFavorito": false,
+    "categorias": [
+      "Playas iconicas",
+      "Recorrido urbano",
+      "Experiencia premium"
+    ],
+    "imagenRuta": "/images/ImagenNull.png",
+    "imagenes": []
+  }
+]
